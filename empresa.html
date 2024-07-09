@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas - Empresa</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+</head>
+<body>
+    <div class="window" style="width: 80%; margin: 50px auto;">
+        <div class="title-bar">
+            <div class="title-bar-text">Pedidos Recibidos</div>
+        </div>
+        <div class="window-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>IP</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td>{{ order.ip_address }}</td>
+                        <td>{{ order.task }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>
+                            <form action="/update_order/{{ order.id }}" method="post">
+                                <select name="status" class="select">
+                                    <option value="Pendiente" {% if order.status == 'Pendiente' %}selected{% endif %}>Pendiente</option>
+                                    <option value="En Proceso" {% if order.status == 'En Proceso' %}selected{% endif %}>En Proceso</option>
+                                    <option value="Completado" {% if order.status == 'Completado' %}selected{% endif %}>Completado</option>
+                                </select>
+                                <button type="submit" class="button">Actualizar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

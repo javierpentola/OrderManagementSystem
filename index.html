@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas - Cliente</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+</head>
+<body>
+    <div class="window" style="width: 400px; margin: 50px auto;">
+        <div class="title-bar">
+            <div class="title-bar-text">Realizar Pedido</div>
+        </div>
+        <div class="window-body">
+            <form action="/create_order" method="post">
+                <div class="field-row-stacked" style="width: 100%;">
+                    <label for="task">Descripción del Pedido:</label>
+                    <input type="text" id="task" name="task" class="text-box" required maxlength="300">
+                </div>
+                <div class="field-row" style="text-align: right; margin-top: 10px;">
+                    <button type="submit" class="button">Enviar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
