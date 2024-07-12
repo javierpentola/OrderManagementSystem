@@ -91,5 +91,3 @@ To use the project after downloading the code, follow these steps:
 
 7. **Viewing the Database:**
    - The database file (`database.db`) is located in the project directory. You can use tools like DB Browser for SQLite or the SQLite command line to view and manage the database contents.
-
-By following these steps, you can set up and run the Order Management System on your local machine. The application will allow clients to place orders and the company to manage those orders through the respective views.
